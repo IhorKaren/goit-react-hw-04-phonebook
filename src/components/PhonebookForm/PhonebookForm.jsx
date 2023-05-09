@@ -23,6 +23,7 @@ const PhonebookForm = ({ addContact }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
@@ -30,7 +31,7 @@ const PhonebookForm = ({ addContact }) => {
 
   const onSubmit = (data, e) => {
     addContact(data.name, data.number);
-    e.target.reset();
+    reset();
   };
 
   return (
